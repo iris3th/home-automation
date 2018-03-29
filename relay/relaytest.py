@@ -19,7 +19,7 @@ for i in pinList:
 
 SleepTimeL = 2
 
-# main loop
+# switch relays on and off
 
 try:
   GPIO.output(4, GPIO.HIGH)
@@ -42,11 +42,8 @@ try:
   time.sleep(SleepTimeL); 
   GPIO.output(26, GPIO.LOW)
   print "4 OFF"
-
-
-
-  # Reset GPIO settings
 except KeyboardInterrupt:  
   print " Quit" 
 
+ # do cleanup
 GPIO.cleanup()
