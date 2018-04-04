@@ -27,31 +27,31 @@ def index():
         elif  request.form.get('Relay 1 OFF') == 'Relay 1 OFF':
             # pass # do something else
             GPIO.output(4, GPIO.LOW)
-            print("Decrypted")
+            print("r1off")
         if request.form.get('Relay 2 ON') == 'Relay 2 ON':
             # pass
             GPIO.output(22, GPIO.HIGH)
-	    print("r1on")
+	    print("r2on")
         elif  request.form.get('Relay 2 OFF') == 'Relay 2 OFF':
             # pass # do something else
             GPIO.output(22, GPIO.LOW)
-            print("Decrypted")
+            print("r2off")
         if request.form.get('Relay 3 ON') == 'Relay 3 ON':
             # pass
             GPIO.output(6, GPIO.HIGH)
-	    print("r1on")
+	    print("r3on")
         elif  request.form.get('Relay 3 OFF') == 'Relay 3 OFF':
             # pass # do something else
             GPIO.output(6, GPIO.LOW)
-            print("Decrypted")
+            print("r3off")
         if request.form.get('Relay 4 ON') == 'Relay 4 ON':
             # pass
             GPIO.output(26, GPIO.HIGH)
-	    print("r1on")
+	    print("r4on")
         elif  request.form.get('Relay 4 OFF') == 'Relay 4 OFF':
             # pass # do something else
             GPIO.output(26, GPIO.LOW)
-            print("Decrypted")
+            print("r4off")
         else:
             # pass # unknown
             return render_template("index.html")
