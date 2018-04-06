@@ -1,21 +1,33 @@
+<!doctype html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<title>Relays</title>
 <html>
     <body>
-        <form method="post" action="/">
-                <input type="submit" value="Relay 1 ON" name="Relay 1 ON"/>
-                <input type="submit" value="Relay 1 OFF" name="Relay 1 OFF"/>
+	<table width=95%>
+	<center>
+	   <form method="post" action="/">
+	    <div class="content">
+                <input type="submit" value="Relay 1 ON" name="Relay 1 ON" style="width:45%"/>
+                <input type="submit" value="Relay 1 OFF" name="Relay 1 OFF" style="width:45%"/>
+	    </div>
+	    <div class="content">
+	        <h1><input type="submit" value="Relay 2 ON" name="Relay 2 ON" style="width:45%"/>
+                <input type="submit" value="Relay 2 OFF" name="Relay 2 OFF" style="width:45%"/>
             </div>
-            <div>
-	        <input type="submit" value="Relay 2 ON" name="Relay 2 ON"/>
-                <input type="submit" value="Relay 2 OFF" name="Relay 2 OFF"/>
+	    <div class="content">
+	        <input type="submit" value="Relay 3 ON" name="Relay 3 ON" style="width:45%"/>
+                <input type="submit" value="Relay 3 OFF" name="Relay 3 OFF" style="width:45%"/>
             </div>
-            <div>
-	        <input type="submit" value="Relay 3 ON" name="Relay 3 ON"/>
-                <input type="submit" value="Relay 3 OFF" name="Relay 3 OFF"/>
+	    <div class="content">
+                <input type="submit" value="Relay 4 ON" name="Relay 4 ON" style="width:45%"/>
+                <input type="submit" value="Relay 4 OFF" name="Relay 4 OFF" style="width:45%"/>
             </div>
-	    <div>
-                <input type="submit" value="Relay 4 ON" name="Relay 4 ON"/>
-                <input type="submit" value="Relay 4 OFF" name="Relay 4 OFF"/>
+	    <div class="content">
+                <input type="submit" value="ALL ON" name="ALL ON" style="width:45%"/>
+                <input type="submit" value="ALL OFF" name="ALL OFF" style="width:45%"/>
             </div>
-        </form>
+        </form></h1>
+	</center>
+	</table>
     </body>
 </html>

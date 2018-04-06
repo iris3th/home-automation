@@ -1,8 +1,14 @@
+#!/usr/bin/env python
 from flask import Flask, render_template, request
+from flask_mobility import Mobility
+from flask_mobility.decorators import mobile_template
+
 import RPi.GPIO as GPIO
 import time
 
 app = Flask(__name__)
+Mobility(app)
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
@@ -14,10 +20,11 @@ pinList = [4, 22, 6, 26]
 
 for i in pinList:
   GPIO.setup(i, GPIO.OUT)
-  GPIO.output(i, GPIO.LOW)
+#  GPIO.output(i, GPIO.LOW)
 
 @app.route("/", methods=['GET', 'POST'])
-def index():
+@mobile_template('/{mobile/}index.html')
+def index(template):
     print(request.method)
     if request.method == 'POST':
         if request.form.get('Relay 1 ON') == 'Relay 1 ON':
@@ -54,11 +61,11 @@ def index():
             print("r4off")
         else:
             # pass # unknown
-            return render_template("index.html")
+            return render_template(template)
     elif request.method == 'GET':
         # return render_template("index.html")
         print("No Post Back Call")
-    return render_template("index.html")
+    return render_template(template)
 
 if __name__ == '__main__':
-        app.run()
+        app.run(host='0.0.0.0')
