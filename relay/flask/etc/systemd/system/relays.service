@@ -1,0 +1,13 @@
+[Unit]
+Description=Relays service
+After=network.target
+
+[Service]
+User=iriseth
+ExecStart=/home/iriseth/raspi/relay/flask/relays.py
+WorkingDirectory=/home/iriseth/raspi/relay/flask/
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
