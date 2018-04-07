@@ -1,5 +1,5 @@
 <!doctype html>
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style2.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <title>Relays</title>
 <html>
     <body>
@@ -31,8 +31,11 @@
                 <input type="submit" value="ALL OFF" name="ALL OFF" style="width:45%"/>
             </div>
         </form>
+<p>&nbsp;</p>
+<div id="list">
+  <p><iframe src="static/status.txt" frameborder="0" height="400" width="95%"></iframe></p>
+</div>
 	</center>
 	</table>
-
     </body>
 </html>

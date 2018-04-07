@@ -18,60 +18,68 @@ pinList = [4, 22, 6, 26]
 
 # loop through pins and set mode and state to 'low'
 
-#for i in pinList:
-#  GPIO.setup(i, GPIO.OUT)
+for i in pinList:
+  GPIO.setup(i, GPIO.OUT)
 #  GPIO.output(i, GPIO.LOW)
-
-def rstatus():
-    n = 1
-    pinList = [4, 22, 6, 26]
-    f= open("static/status.txt","w+")
-    for k in pinList:
-        GPIO.setup(k, GPIO.IN)
-	GPIO.setup(k, GPIO.OUT)
-	f.write ("Relay %d is in state %d" % (n, GPIO.input(k)) + '\n')
-	n = n + 1
-    f.close()
-#    print(open("static/status.txt").read())
 
 @app.route("/", methods=['GET', 'POST'])
 @mobile_template('/{mobile/}index.html')
 def index(template):
-#    print(request.method)
-    rstatus()
+    print(request.method)
     if request.method == 'POST':
         if request.form.get('Relay 1 ON') == 'Relay 1 ON':
+            # pass
             GPIO.output(4, GPIO.HIGH)
-	    rstatus()
-	elif  request.form.get('Relay 1 OFF') == 'Relay 1 OFF':
+	    print("r1on")
+        elif  request.form.get('Relay 1 OFF') == 'Relay 1 OFF':
+            # pass # do something else
             GPIO.output(4, GPIO.LOW)
-	    rstatus()
+            print("r1off")
         if request.form.get('Relay 2 ON') == 'Relay 2 ON':
+            # pass
             GPIO.output(22, GPIO.HIGH)
-	    rstatus()
+	    print("r2on")
         elif  request.form.get('Relay 2 OFF') == 'Relay 2 OFF':
+            # pass # do something else
             GPIO.output(22, GPIO.LOW)
-	    rstatus()
+            print("r2off")
         if request.form.get('Relay 3 ON') == 'Relay 3 ON':
+            # pass
             GPIO.output(6, GPIO.HIGH)
-	    rstatus()
+	    print("r3on")
         elif  request.form.get('Relay 3 OFF') == 'Relay 3 OFF':
+            # pass # do something else
             GPIO.output(6, GPIO.LOW)
-	    rstatus()
+            print("r3off")
         if request.form.get('Relay 4 ON') == 'Relay 4 ON':
+            # pass
             GPIO.output(26, GPIO.HIGH)
-	    rstatus()
+	    print("r4on")
         elif  request.form.get('Relay 4 OFF') == 'Relay 4 OFF':
+            # pass # do something else
             GPIO.output(26, GPIO.LOW)
-	    rstatus()
+            print("r4off")
         else:
+            # pass # unknown
             return render_template(template)
     elif request.method == 'GET':
+        # return render_template("index.html")
         print("No Post Back Call")
     return render_template(template)
+
+def rstatus():
+    pinList = [4, 22, 6, 26]
+    f= open("static/status.txt","w+")
+    for k in pinList:
+    GPIO.setup(k, GPIO.IN)
+    state = GPIO.input(k)
+    f.write( 'dict = ' + repr(state) + '\n' )
+#        GPIO.output(26, 0)
+    f.close()
+
 
 
 if __name__ == '__main__':
 #        app.run(host='0.0.0.0', port=80)
-        app.run(host='0.0.0.0', port=5000, use_reloader=True)
-#	rstatus()
+        app.run(host='0.0.0.0', port=5000)
+	rstatus()

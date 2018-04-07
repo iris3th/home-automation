@@ -1,0 +1,4 @@
+Relay 1 is in state 0
+Relay 2 is in state 0
+Relay 3 is in state 0
+Relay 4 is in state 0

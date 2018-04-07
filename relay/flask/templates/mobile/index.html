@@ -5,23 +5,30 @@
     <body>
     	    <h1>mobile</h1>
 	    <form method="post" action="/">
-    	    <div>    
-	    <input type="submit" value="Relay 1 ON" name="Relay 1 ON" style="width:40%"/>
-            <input type="submit" value="Relay 1 OFF" name="Relay 1 OFF" style="width:40%"/>
-            </div>
+    	    <div>
+	    <font size="+2"><input type="submit" value="Relay 1 ON" name="Relay 1 ON" style="width:45%; font-size: 20px; height: 100px"/></font>
+            <input type="submit" size="30" value="Relay 1 OFF" name="Relay 1 OFF" style="width:45%; font-size: 20px; height: 100px"/>
+	    </div>
+	    <p>&nbsp;</p>
             <div>
-	        <input type="submit" value="Relay 2 ON" name="Relay 2 ON"style="width:40%"/>
-                <input type="submit" value="Relay 2 OFF" name="Relay 2 OFF" style="width:40%"/>
+	        <input type="submit" value="Relay 2 ON" name="Relay 2 ON" style="width:45%; font-size: 20px; height: 100px"/>
+                <input type="submit" value="Relay 2 OFF" name="Relay 2 OFF" style="width:45%; font-size: 20px; height: 100px"/>
             </div>
+<p>&nbsp;</p>
             <div>
-	        <input type="submit" value="Relay 3 ON" name="Relay 3 ON" style="width:40%"/>
-                <input type="submit" value="Relay 3 OFF" name="Relay 3 OFF" style="width:40%"/>
+	        <input type="submit" value="Relay 3 ON" name="Relay 3 ON" style="width:45%; font-size: 20px; height: 100px"/>
+                <input type="submit" value="Relay 3 OFF" name="Relay 3 OFF" style="width:45%; font-size: 20px; height: 100px"/>
             </div>
+<p>&nbsp;</p>
 	    <div>
-                <input type="submit" value="Relay 4 ON" name="Relay 4 ON" style="width:40%"/>
-                <input type="submit" value="Relay 4 OFF" name="Relay 4 OFF" style="width:40%"/>
+                <input type="submit" value="Relay 4 ON" name="Relay 4 ON" style="width:45%; font-size: 20px; height: 100px"/>
+                <input type="submit" value="Relay 4 OFF" name="Relay 4 OFF" style="width:45%; font-size: 20px; height: 100px"/>
             </div>
         </form>
+<p>&nbsp;</p>
+  <div id="list">
+  	<p><iframe src="static/status.txt" frameborder="0" height="400" width="95%"></iframe></p>
+  </div>    
     </body>
 </html>
 {% endblock %}
