@@ -28,8 +28,8 @@ def rstatus():
     f= open("static/status.txt","w+")
     for k in pinList:
         GPIO.setup(k, GPIO.IN)
-	GPIO.setup(k, GPIO.OUT)
 	f.write ("Relay %d is in state %d" % (n, GPIO.input(k)) + '\n')
+	GPIO.setup(k, GPIO.OUT)
 	n = n + 1
     f.close()
 #    print(open("static/status.txt").read())
